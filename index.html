@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatrizMenezesNutrição</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css"/>
 </head>
 <body>
@@ -19,18 +19,27 @@
                 </div>
             </div>
 
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#aboutMe">Sobre mim</a></li>
-                <li><a href="https://wa.me/5581986489226" target="_blank">Contato</a></li>
-                <li><a href="https://www.instagram.com/pedropinheiro.dev/" target="_blank">
-                    <div class="insta">
-                        <img src="assets/Images/Instagram (1).png" alt="insta"/>
-                    </div>
-                </a></li>
-            </ul>
-        </nav>
+            <!-- Hamburger button (visible only on mobile) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#aboutMe" class="nav-link">Sobre mim</a></li>
+                    <li><a href="https://wa.me/5581986489226" target="_blank">Contato</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/pedropinheiro.dev/" target="_blank">
+                            <div class="insta">
+                                <img src="assets/Images/Instagram (1).png" alt="insta"/>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
         </div>
     </header>
@@ -53,7 +62,7 @@
             </div>
             <div class="whatsappLogo">
                 <a href="https://wa.me/5581986489226" target="_blank">
-                <img src="assets/Images/WhatsApp_Logo_PNG_Transparente_Sem_Fundo.png" alt="Whatsapp" draggable="false";/>
+                    <img src="assets/Images/WhatsApp_Logo_PNG_Transparente_Sem_Fundo.png" alt="Whatsapp" draggable="false"/>
                 </a>
             </div>
         </section>
@@ -61,7 +70,7 @@
         <section class="aboutPage" id="aboutMe">
             <div class="container">
                 <div class="brasao">
-                <img src="assets/Images/Brasão_da_UFPE.png" alt="brasao" draggable="false"/>
+                    <img src="assets/Images/Brasão_da_UFPE.png" alt="brasao" draggable="false"/>
                 </div>
                 <div class="leftSide">
                     <h1>Quem é <span>Beatriz Menezes</span>?</h1>
@@ -77,7 +86,7 @@
 
                 <div class="rightSide">
                     <div class="consultory">
-                        <img src = "assets/Images/Consultorio.png" alt="consultorio" draggable="false"/>
+                        <img src="assets/Images/Consultorio.png" alt="consultorio" draggable="false"/>
                     </div>
                     <p>
                         📍Empresarial Albert Einstein<br/> Rua Estado de Israel, Ilha do Leite
@@ -92,33 +101,43 @@
                 <h1>Formatos de<br/>acompanhamento</h1>
                 <div class="formatOfCollabBox">
                     <div class="formatOfCollab">
-                            <div class="formatOfCollabImg">
-                                <img src="assets/Images/consulOnlineImg.jpg" alt="consultoria online img" draggable="false"/>
-                            </div>
-
-                            <h3>Consultoria<br/>online</h3>
-
-                            <p class="left">Agende sua consulta, converse com a nutri,
-                                saia com seu plano alimentar personalizado e 
-                                tenha acompanhamento contínuo!
-                            </p>
+                        <div class="formatOfCollabImg">
+                            <img src="assets/Images/consulOnlineImg.jpg" alt="consultoria online img" draggable="false"/>
+                        </div>
+                        <h3>Consultoria<br/>online</h3>
+                        <p>Agende sua consulta, converse com a nutri,
+                            saia com seu plano alimentar personalizado e 
+                            tenha acompanhamento contínuo!
+                        </p>
                     </div>
 
                     <div class="formatOfCollab">
-                            <div class="formatOfCollabImg">
-                                <img src="assets/Images/NutriPresencial.jpg" alt="consultoria online img" draggable="false"/>
-                            </div>
-
-                            <h3>Consultoria<br/>presencial</h3>
-
-                            <p>Agende via WhatsApp, realize a consulta com direito a avaliação da composição corporal, 
-                                receba seu plano alimentar personalizado e inicie seu acompanhamento contínuo 
-                                até a próxima consulta!
+                        <div class="formatOfCollabImg">
+                            <img src="assets/Images/NutriPresencial.jpg" alt="consultoria presencial img" draggable="false"/>
+                        </div>
+                        <h3>Consultoria<br/>presencial</h3>
+                        <p>Agende via WhatsApp, realize a consulta com direito a avaliação da composição corporal, 
+                            receba seu plano alimentar personalizado e inicie seu acompanhamento contínuo 
+                            até a próxima consulta!
                         </p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
+        // Close nav when a link is clicked (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => nav.classList.remove('open'));
+        });
+    </script>
 </body>
 </html>

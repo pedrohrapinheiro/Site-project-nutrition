@@ -2,79 +2,116 @@
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+ 
 body {
-    margin:0;
+    margin: 0;
 }
+ 
+/* ── HEADER ── */
 .banner {
-    width:100%;
-    height:100px;
+    width: 100%;
+    height: 100px;
     background: linear-gradient(90deg, #062A38 0%, #11779E 100%);
     border: 1px solid #000000;
-
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index:2;
+    z-index: 2;
 }
-
+ 
 .container {
-    width:1040px;
-    height:auto;
-    display:flex;
+    width: 1040px;
+    max-width: 100%;
+    padding: 0 20px;
+    height: auto;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-
+ 
 .logo {
-    width:50px;
-    height:50px;
-    display:flex;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: white;
 }
+ 
 .logo img {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
+ 
+/* ── NAV ── */
 nav ul {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     list-style-type: none;
-    padding:0;
-    margin:0;
-    flex:1;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
 }
-
+ 
 nav ul li {
-    margin-left:60px;
+    margin: 0;
 }
-
+ 
 nav ul li a {
-    color:#fff;
+    color: #fff;
     text-decoration: none;
-    font-size:23px;
+    font-size: 18px;
+    white-space: nowrap;
 }
-
+ 
+.insta img {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+ 
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+ 
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+ 
+/* ── MAIN ── */
 main {
-    width:100%;
-    display:flex;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:auto;
+    height: auto;
 }
-
+ 
+/* ── LAND PAGE ── */
 .landPage {
-    width:100%;
-    height:100%;
-    display:flex;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-image: url(Images/Gráfico.png);
@@ -82,235 +119,402 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+ 
 .landPage .container {
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-
+ 
 .leftSide {
-    flex:1;
-    height:100%;
-    display:flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-
-.leftSide ul{
-    list-style-type: none;
-    padding:0;
-    margin:0;
-    display:flex;
-    flex-direction: column;
-    margin-bottom: 200px;
-    margin-left:60px;
-}
-
-
-.leftSide .h1 {
-    font-size:60px;
-    color:#fff;
-    margin:0;
-    font-weight:800;
-    font-family: 'JetBrains Mono', arial;
-}
-
-.leftSide .h3 {
-    font-weight: lighter;
-    font-size:20px;
-    color:#fff;
-    margin:0;
-    font-weight:800;
-}
-
-.rightSide {
-    flex:1;
-    height:100%;
-    display:flex;
-    justify-content: end;
-    align-items: center;
-}
-
-.nutriImg {
-    width:100%;
-    height:100%;
-}
-
-.nutriImg img {
-    width: 480px;
+    flex: 1;
+    min-width: 280px;
     height: 100%;
-}
-
-.whatsappLogo {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 40px;
-    height: 50px;
-    width: 50px;
-}
-
-.whatsappLogo img {
-    width:100%;
-    height:100%;
-}
-/* ABOUT PAGE */
-
-.aboutPage {
-    background: linear-gradient(180deg, #77ABC5 0%, #4E98BE 25%, #366983 50%, #052231 100%);
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width:100%;
-    height:auto;
-}
-
-
-.aboutPage .brasao {
-    height:70px;
-    width:50px;
-    position:relative;
-    top:-380px;
-    left:990px;
-}
-
-.aboutPage .brasao img {
-    height:100%;
-    width:100%;
-    z-index:1;
-}
-
-.aboutPage .leftSide h1 {
-    font-size:60px;
-    color:#fff;
-    margin:0;
-    font-weight:800;
-    margin-top:50px;
-}
-
-.aboutPage .leftSide h1 span {
-    font-weight: bold;
-    color:black;
-}
-
-.aboutPage .leftSide p {
-    font-size:30px;
-    color:#fff;
-    margin:0;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top:30px;
-    margin-bottom:100px;
-}
-
-.consultory {
-    height:287px;
-    width:481px;
-    margin-left:50px;
-}
-
-.consultory img {
-    width:100%;
-    height:100%;
-}
-
-.aboutPage .rightSide {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
-
-.aboutPage .rightSide p {
-    font-size:25px;
-    color:#fff;
-    margin:0;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top:10px;
-    margin-left:50px;
-
+ 
+.leftSide ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
 }
-
-/*Collab Format */
-
-.collabFormat {
-    background: linear-gradient(180deg, #052231 0%, #0F6491 99.99%, #0F6997 100%);
-    display:flex;
+ 
+.leftSide .h1 {
+    font-size: clamp(28px, 5vw, 60px);
+    color: #fff;
+    margin: 0;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', arial;
+}
+ 
+.leftSide .h3 {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: #fff;
+    margin: 0;
+    font-weight: 800;
+    margin-top: 10px;
+}
+ 
+.rightSide {
+    flex: 1;
+    min-width: 280px;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width:100%;
-    height:auto;
-
 }
-
+ 
+.nutriImg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ 
+.nutriImg img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+}
+ 
+/* WhatsApp float */
+.whatsappLogo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+    height: 50px;
+    width: 50px;
+    z-index: 10;
+}
+ 
+.whatsappLogo img {
+    width: 100%;
+    height: 100%;
+}
+ 
+/* ── ABOUT PAGE ── */
+.aboutPage {
+    background: linear-gradient(180deg, #77ABC5 0%, #4E98BE 25%, #366983 50%, #052231 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 60px 0;
+    position: relative;
+}
+ 
+.aboutPage .container {
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+ 
+.aboutPage .brasao {
+    height: 70px;
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+ 
+.aboutPage .brasao img {
+    height: 100%;
+    width: 100%;
+}
+ 
+.aboutPage .leftSide {
+    min-width: 260px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+ 
+.aboutPage .leftSide h1 {
+    font-size: clamp(28px, 4vw, 60px);
+    color: #fff;
+    margin: 0;
+    font-weight: 800;
+}
+ 
+.aboutPage .leftSide h1 span {
+    font-weight: bold;
+    color: black;
+}
+ 
+.aboutPage .leftSide p {
+    font-size: clamp(15px, 2vw, 22px);
+    color: #fff;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+ 
+.consultory {
+    width: 100%;
+    max-width: 481px;
+    height: auto;
+    aspect-ratio: 481 / 287;
+}
+ 
+.consultory img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.aboutPage .rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 260px;
+}
+ 
+.aboutPage .rightSide p {
+    font-size: clamp(14px, 1.8vw, 22px);
+    color: #fff;
+    margin: 10px 0 0 0;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+}
+ 
+/* ── COLLAB FORMAT ── */
+.collabFormat {
+    background: linear-gradient(180deg, #052231 0%, #0F6491 99.99%, #0F6997 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px 20px 60px;
+}
+ 
 .collabFormat .container {
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
+ 
 .collabFormat .container h1 {
-    font-size:50px;
-    color:#fff;
-    margin:0;
-    font-weight:800;
-    margin-top:50px;
+    font-family: 'JetBrains Mono', arial;
+    font-style: italic;
+    font-weight: 800;
+    font-size: clamp(30px, 5vw, 60px);
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
 }
-
+ 
 .formatOfCollabBox {
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Centraliza as caixas no meio da tela */
-    align-items: stretch;    /* ISSO faz com que todas estiquem para ter a mesma altura */
-    gap: 30px;               /* Adiciona um espaçamento uniforme entre elas */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    width: 100%;
 }
-
+ 
 .formatOfCollabBox .formatOfCollab {
     width: 300px;
+    flex: 1 1 260px;
+    max-width: 350px;
     background: linear-gradient(180deg, #062A38 0%, #136D90 100%);
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    
-    /* Garante que o conteúdo interno se distribua e a caixa não encolha */
-    flex: 1; 
-    max-width: 350px; /* Define um limite máximo para não ficarem largas demais em telas grandes */
 }
-
-
-
-.collabFormat .container h1{
-    font-family: 'JetBrains Mono', arial;
-    font-style: italic;
-    font-weight: 800;
-    font-size: 60px;
-    color: #FFFFFF;
-}
-
+ 
 .formatOfCollabImg {
-    height:160px;
-    width:220px;
-    margin-top:20px;
+    height: 160px;
+    width: 220px;
+    margin-top: 20px;
 }
-
+ 
 .formatOfCollabImg img {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
+    object-fit: cover;
 }
+ 
 .formatOfCollab h3 {
-    font-size:30px;
-    color:#fff;
-    font-family: 'JetBrains Mono', arial;
-    margin-top:10px;
-}
-.formatOfCollab p {
-    font-size: 15px;
+    font-size: clamp(20px, 2.5vw, 30px);
     color: #fff;
     font-family: 'JetBrains Mono', arial;
-    margin: 0 40px 40px 40px; /* Margens laterais e inferior uniformes */
-    text-align: center;      /* Centralizar o texto costuma ficar melhor nesse layout */
-    flex-grow: 1;            /* Faz o parágrafo ocupar o espaço restante, empurrando o resto se necessário */
+    margin-top: 10px;
+    text-align: center;
+}
+ 
+.formatOfCollab p {
+    font-size: clamp(13px, 1.5vw, 15px);
+    color: #fff;
+    font-family: 'JetBrains Mono', arial;
+    margin: 0 30px 40px 30px;
+    text-align: center;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+ 
+/* ══════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════════ */
+ 
+/* Tablet */
+@media (max-width: 900px) {
+    .container {
+        width: 100%;
+    }
+ 
+    nav ul {
+        gap: 18px;
+    }
+ 
+    nav ul li a {
+        font-size: 16px;
+    }
+ 
+    .landPage .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+ 
+    .leftSide {
+        align-items: center;
+    }
+ 
+    .leftSide ul {
+        margin-left: 0;
+        align-items: center;
+    }
+ 
+    .rightSide {
+        justify-content: center;
+    }
+ 
+    .aboutPage .container {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .aboutPage .leftSide {
+        align-items: center;
+        text-align: center;
+    }
+ 
+    .aboutPage .rightSide {
+        align-items: center;
+    }
+ 
+    .aboutPage .rightSide p {
+        text-align: center;
+    }
+ 
+    .consultory {
+        max-width: 90vw;
+    }
+}
+ 
+/* Mobile */
+@media (max-width: 600px) {
+    .banner {
+        height: 70px;
+    }
+ 
+    /* Show hamburger, hide nav by default */
+    .menu-toggle {
+        display: flex;
+    }
+ 
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #062A38 0%, #11779E 100%);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.35s ease;
+    }
+ 
+    nav.open {
+        max-height: 300px;
+    }
+ 
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+    }
+ 
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+ 
+    nav ul li a {
+        font-size: 18px;
+    }
+ 
+    .landPage {
+        padding-top: 70px;
+        min-height: 100svh;
+    }
+ 
+    .landPage .container {
+        flex-direction: column-reverse;
+        padding: 30px 16px;
+        gap: 10px;
+    }
+ 
+    .nutriImg img {
+        max-width: 260px;
+    }
+ 
+    .leftSide ul {
+        align-items: center;
+    }
+ 
+    .aboutPage {
+        padding: 50px 16px 40px;
+    }
+ 
+    .aboutPage .brasao {
+        top: 10px;
+        right: 16px;
+        height: 50px;
+        width: 36px;
+    }
+ 
+    .formatOfCollabBox {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .formatOfCollabBox .formatOfCollab {
+        max-width: 90vw;
+        width: 100%;
+    }
+ 
+    .whatsappLogo {
+        margin: 16px;
+        height: 42px;
+        width: 42px;
+    }
 }
